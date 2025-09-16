@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Link from 'next/link'
+import Button from '@/components/button'
 import profile from '@/../public/sitting-removebg-preview.png'
 
 
@@ -10,9 +10,9 @@ export default function Hero() {
                 <div className="">
                     <h1 className="text-6xl font-bold mb-10">The Software Engineer your Team Needs</h1>
                     <p className="text-lg mb-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lacus tellus, placerat in consequat bibendum, porttitor in tellus. Maecenas nec ante luctus, vulputate mi in, porta nulla.</p>
-                    <div className='flex gap-4 justify-center md:justify-start'>
-                        <Link href='#' className='bg-sky-500 text-lg text-white py-4 px-8 rounded-2xl'>See all Skills</Link>
-                        <Link href='#' className='bg-white text-lg text-gray-800 py-4 px-8 rounded-2xl'>Work Experience &darr;</Link>
+                    <div className='flex flex-col gap-4 justify-center mx-20 md:flex-row md:justify-start md:mx-0'>
+                        <Button href='#' className='text-white'>See all Skills</Button>
+                        <Button href='#' className='bg-white text-gray-800'>Work Experience &darr;</Button>
                     </div>
                 </div>
                 <div className="mx-4 md:mx-0 self-end">
