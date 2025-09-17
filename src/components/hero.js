@@ -5,7 +5,7 @@ import profile from '@/../public/sitting-removebg-preview.png'
 
 export default function Hero() {
     return (
-        <section className="bg-sky-100 h-auto mb-40 pt-10">
+        <section className="bg-sky-100 h-auto mb-30 pt-10">
             <div className="bg-sky-100 grid grid-cols-1 items-center text-center md:h-screen max-w-9/10 mx-auto md:grid-cols-2 md:gap-4 md:text-left">
                 <div className="">
                     <h1 className="text-6xl font-bold mb-10">The Software Engineer your Team Needs</h1>
