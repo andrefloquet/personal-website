@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import Button from '@/components/button'
-import profile from '@/../public/sitting-removebg-preview.png'
+import profile from '@/../public/sitting.png'
 
 
 export default function Hero() {
     return (
         <section className="bg-sky-100 h-auto mb-30 pt-10">
-            <div className="bg-sky-100 grid grid-cols-1 items-center text-center md:h-screen max-w-9/10 mx-auto md:grid-cols-2 md:gap-4 md:text-left">
+            <div className="grid grid-cols-1 items-center text-center md:h-screen max-w-9/10 mx-auto md:grid-cols-2 md:gap-4 md:text-left">
                 <div className="">
                     <h1 className="text-6xl font-bold mb-10">The Software Engineer your Team Needs</h1>
                     <p className="text-lg mb-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lacus tellus, placerat in consequat bibendum, porttitor in tellus. Maecenas nec ante luctus, vulputate mi in, porta nulla.</p>
@@ -15,7 +15,7 @@ export default function Hero() {
                         <Button href='#' className='bg-white text-gray-800'>Work Experience &darr;</Button>
                     </div>
                 </div>
-                <div className="mx-4 md:mx-0 self-end">
+                <div className="mt-10 mx-4 self-end md:mx-0 md:mt-0">
                     <Image 
                         src={profile} 
                         alt="Picture of Andre Floquet. The author." 
