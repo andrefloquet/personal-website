@@ -8,11 +8,11 @@ export default function Hero() {
         <section className="bg-sky-100 h-auto mb-30 pt-10">
             <div className="grid grid-cols-1 items-center text-center md:h-screen max-w-9/10 mx-auto md:grid-cols-2 md:gap-4 md:text-left">
                 <div className="">
-                    <h1 className="text-6xl font-bold mb-10">The Software Engineer your Team Needs</h1>
-                    <p className="text-lg mb-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lacus tellus, placerat in consequat bibendum, porttitor in tellus. Maecenas nec ante luctus, vulputate mi in, porta nulla.</p>
+                    <h1 className="text-6xl font-bold mb-10">Andre Floquet, The Software Engineer your Team Needs</h1>
+                    <p className="text-lg mb-10">Would you rather have an average Permanent Resident developer or a Senior Engineer who is currently holding a student visa? In over 18 years working as a Software Engineer, there was not anything that I could not do yet.</p>
                     <div className='flex flex-col gap-4 justify-center mx-20 md:flex-row md:justify-start md:mx-0'>
-                        <Button href='#' className='text-white'>See all Skills</Button>
-                        <Button href='#' className='bg-white text-gray-800'>Work Experience &darr;</Button>
+                        <Button href='#' className='text-white'>Resume  &darr;</Button>
+                        <Button href='#' className='bg-white text-gray-800'>Letter &darr;</Button>
                     </div>
                 </div>
                 <div className="mt-10 mx-4 self-end md:mx-0 md:mt-0">
