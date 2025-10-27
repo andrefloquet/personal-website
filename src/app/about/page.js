@@ -11,17 +11,34 @@ export default function About() {
             <section className="max-w-9/10 mx-auto my-20">
                 <h2 className="text-center text-4xl mb-16 md:text-left">About The Website</h2>
                 <p className="text-center mb-6 md:text-left">This Website is built using Nextjs and TailwindCss. It is hosted on a Serverless environment on Vercel. It will have the sections below:</p>
-                <ul className="flex flex-col justify-center rounded-sm shadow-md list-disc py-6 pl-10">
-                    <li>Header / Main Navigation <CircleCheck className="w-4 h-4 text-green-600 inline" /></li>
-                    <li>Hero Section <CircleCheck className="w-4 h-4 text-green-600 inline" /></li>
-                    <li>How Can I help you section <CircleCheck className="w-4 h-4 text-green-600 inline" /></li>
-                    <li>Skills</li>
-                    <li>Work Experience</li>
-                    <li>Education</li>
-                    <li>Certifications</li>
-                    <li>About Page <CircleCheck className="w-4 h-4 text-green-600 inline" /></li>
-                    <li className="">Footer <CircleCheck className="w-4 h-4 text-green-600 inline" /></li>
-                </ul>
+                <div class="grid grid-cols-[auto_1fr] justify-center items-center gap-3 rounded-sm shadow-md p-6">
+                    <div><CircleCheck className="w-4 h-4 text-green-600" /></div>
+                    <div class="line-through">Header / Main Navigation</div>
+
+                    <div><CircleCheck className="w-4 h-4 text-green-600" /></div>
+                    <div class="line-through">Hero Section</div>
+
+                    <div><CircleCheck className="w-4 h-4 text-green-600" /></div>
+                    <div class="line-through">How Can I help you section</div>
+
+                    <div></div>
+                    <div>Skills</div>
+
+                    <div></div>
+                    <div>Work Experience</div>   
+
+                    <div></div>
+                    <div>Education</div>
+
+                    <div></div>
+                    <div>Certifications</div>    
+
+                    <div><CircleCheck className="w-4 h-4 text-green-600" /></div>
+                    <div class="line-through">About Page</div>      
+
+                    <div><CircleCheck className="w-4 h-4 text-green-600" /></div>
+                    <div class="line-through">Footer</div>                                                                          
+                </div>
             </section>
         </main>
     )
