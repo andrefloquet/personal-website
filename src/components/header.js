@@ -19,6 +19,8 @@ export default function Header() {
                 </div>
                 <nav className="flex-1">
                     <ul className="flex flex-row gap-6 items-center justify-center font-poppins">
+                        <MenuItem name="Home" href="/" />
+                        <MenuItem name="Skills" href="/skills" />                        
                         <MenuItem name="About" href="/about" />
                     </ul>
                 </nav>

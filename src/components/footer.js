@@ -25,7 +25,9 @@ export default function Footer() {
                     </div>
                     <div className="flex flex-col md:flex-row">
                         <nav>
-                            <ul className="flex flex-col gap-4 md:flex-row">
+                            <ul className="flex flex-col items-center justify-center gap-4 md:flex-row">
+                                <MenuItem name="Home" href="/" />
+                                <MenuItem name="Skills" href="/skills" />
                                 <MenuItem name="About" href="/about" />
                             </ul>
                         </nav>
