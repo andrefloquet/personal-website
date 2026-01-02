@@ -5,8 +5,8 @@ export default function About() {
         <>
             <section className="max-w-9/10 mx-auto my-20">
                 <h2 className="text-center text-4xl mb-16 md:text-left">About me</h2>
-                <p className="text-center mb-6 md:text-left">Hi there! My name is Andre Floquet, I have a bachelor's degree of science in computer science and I have been working as a Software Engineer for over 18 years. I worked on web development (backend and frontend), Desktop systems, ERP systems, Mobile apps and so on. Hosting and deploying the apps on premises and cloud environments.</p>
-                <p className="text-center md:text-left">My interests are web and mobile app development, DevOps, Network and AI. My hobbies are surfing, skating, skydiving and studying. I am a forever student :) </p>
+                <p className="text-center mb-6 md:text-left">Hi there! My name is Andre Floquet, I am Brazilian. I have a bachelor's degree of science in computer science and I have been working as a Software Engineer for over 18 years. I worked on web development (backend and frontend), Desktop systems, ERP systems, Mobile apps and so on. Hosting and deploying the apps on premises and cloud environments.</p>
+                <p className="text-center md:text-left">My interests are web and mobile app development, DevOps, Network and AI. My hobbies are surfing, skating, skydiving and studying. I am a forever student.</p>
             </section>
             <section className="max-w-9/10 mx-auto my-10">
                 <h2 className="text-center text-4xl mb-16 md:text-left">About The Website</h2>
