@@ -6,7 +6,7 @@ export default function Hero() {
         <section className="bg-sky-100 h-auto mb-30 pt-10">
             <div className="grid grid-cols-1 items-center text-center max-w-9/10 mx-auto md:h-screen md:grid-cols-2 md:gap-4 md:text-left">
                 <div className="">
-                    <h1 className="text-6xl text-sky-900 font-bold mb-10">Andre Floquet, The Software Engineer your Team Needs</h1>
+                    <h1 className="text-6xl text-sky-900 font-bold mb-10">Andre Floquet, a Software Engineer with over 18 years of experience.</h1>
                     <p className="text-lg mb-10">Would you rather have an average Permanent Resident developer or a Senior Engineer who is currently holding a student visa?</p>
                     <div className='flex flex-col gap-4 justify-center mx-20 md:flex-row md:justify-start md:mx-0'>
                         <a className='bg-sky-600 font-medium text-lg py-4 px-8 rounded-lg text-white transition hover:bg-sky-700' href="/Andre_Floquet_Resume.pdf" download>
