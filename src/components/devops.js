@@ -3,6 +3,8 @@ import CardContainer from '@/components/card-container';
 
 // images
 import aws from '@/../public/images/aws.png'
+import docker from '@/../public/images/docker.png'
+import kubernetes from '@/../public/images/kubernetes.png'
 
 export default function DevOps() {
     return (
@@ -15,6 +17,20 @@ export default function DevOps() {
                     alt="Picture of AWS." 
                     title="AWS" 
                     subtitle="Amazon Web Services"
+                />
+
+                <GalleryItem 
+                    src={docker} 
+                    alt="Picture of Docker." 
+                    title="Docker" 
+                    subtitle="Containerisation"
+                />
+
+                <GalleryItem 
+                    src={kubernetes} 
+                    alt="Picture of Kubernetes." 
+                    title="Kubernetes" 
+                    subtitle="Container Orchestration"
                 />
 
             </CardContainer>   

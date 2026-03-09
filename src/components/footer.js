@@ -11,15 +11,15 @@ export default function Footer() {
     const size = 20;
 
     return (
-        <footer className='bg-sky-100'>
-            <div className="flex flex-col gap-10 justify-center md:justify-between items-center max-w-9/10 mx-auto md:flex-row py-6">
+        <footer className='mt-20 border-t border-slate-200 bg-white'>
+            <div className="flex flex-col gap-10 justify-center md:justify-between items-center max-w-9/10 mx-auto md:flex-row py-10">
                 <div className="flex flex-col gap-6 justify-center items-center md:flex-row">
                     <div>
                         <Link href="/">
                             <Image 
                                 src={logo} 
                                 alt="Website logo" 
-                                className="w-25 h-25"
+                                className="h-16 w-16 md:h-20 md:w-20"
                             />
                         </Link>
                     </div>
@@ -49,7 +49,7 @@ export default function Footer() {
                         </a>
                     </div>
                     <div>
-                        <p className="text-sm">&copy; 2025 Andre Floquet. All rights reserved.</p>
+                        <p className="text-sm text-slate-600">&copy; 2026 Andre Floquet. All rights reserved.</p>
                     </div>
                 </div>
             </div>

@@ -1,7 +1,5 @@
-import Network from '@/components/network';
+import SkillsCategoryPage from '@/components/skills-category-page';
 
 export default function FrontendPage() {
-    return (
-        <Network />                                                        
-    )
+    return <SkillsCategoryPage slug="networking" />;
 }

@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.13",
+    "simple-icons": "^16.11.0",
     "tailwindcss": "^4.1.13"
   }
 }

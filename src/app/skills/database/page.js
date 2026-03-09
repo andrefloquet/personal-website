@@ -1,7 +1,5 @@
-import Database from '@/components/database';
+import SkillsCategoryPage from '@/components/skills-category-page';
 
 export default function DatabasePage() {
-    return (
-        <Database />                                                        
-    )
+    return <SkillsCategoryPage slug="databases" />;
 }

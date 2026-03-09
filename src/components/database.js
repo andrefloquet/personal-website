@@ -11,6 +11,7 @@ import postgresql from '@/../public/images/postgresql.png'
 import sqlserver from '@/../public/images/sqlserver.png'
 import mysql from '@/../public/images/mysql.png'
 import mongodb from '@/../public/images/mongodb.png'
+import dynamodb from '@/../public/images/dynamodb.png'
 
 export default function Database() {
 
@@ -54,7 +55,14 @@ export default function Database() {
                     alt="Picture of MongoDb." 
                     title="MongoDb" 
                     subtitle="MongoDb database"
-                />                                                                      
+                />
+
+                <GalleryItem 
+                    src={dynamodb} 
+                    alt="Picture of DynamoDB." 
+                    title="DynamoDB" 
+                    subtitle="AWS DynamoDB"
+                />
 
             </CardContainer>  
 

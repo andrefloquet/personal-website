@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024">
+  <defs>
+    <linearGradient id="bg" x1="220" y1="180" x2="1310" y2="860" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#4F46E5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1536" height="1024" fill="#E5E7EB"/>
+  <g transform="translate(768 512)">
+    <rect x="-500" y="-260" width="1000" height="520" rx="46" fill="url(#bg)"/>
+    <text x="0" y="-20" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="188" font-weight="800" fill="#FFFFFF">ATP</text>
+    <text x="0" y="140" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="52" font-weight="600" fill="#E2E8F0">Any Third-party APIs</text>
+  </g>
+</svg>

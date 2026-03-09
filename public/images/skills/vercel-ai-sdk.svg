@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024">
+  <rect width="1536" height="1024" fill="#E5E7EB"/>
+  <g transform="translate(768 430)">
+    <rect x="-360" y="-250" width="720" height="500" rx="40" fill="#FFFFFF"/>
+    <g transform="translate(0 -35) scale(13)">
+      <path d="m12 1.608 12 20.784H0Z" fill="#000000" transform="translate(-12 -12)"/>
+    </g>
+    <text x="0" y="210" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="56" font-weight="700" fill="#0F172A">Vercel AI SDK</text>
+  </g>
+</svg>

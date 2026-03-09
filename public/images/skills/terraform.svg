@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024">
+  <rect width="1536" height="1024" fill="#E5E7EB"/>
+  <g transform="translate(768 430)">
+    <rect x="-360" y="-250" width="720" height="500" rx="40" fill="#FFFFFF"/>
+    <g transform="translate(0 -35) scale(13)">
+      <path d="M1.44 0v7.575l6.561 3.79V3.787zm21.12 4.227l-6.561 3.791v7.574l6.56-3.787zM8.72 4.23v7.575l6.561 3.787V8.018zm0 8.405v7.575L15.28 24v-7.578z" fill="#844FBA" transform="translate(-12 -12)"/>
+    </g>
+    <text x="0" y="210" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="56" font-weight="700" fill="#0F172A">Terraform</text>
+  </g>
+</svg>

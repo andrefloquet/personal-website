@@ -1,7 +1,5 @@
-import Mobile from '@/components/mobile';
+import SkillsCategoryPage from '@/components/skills-category-page';
 
 export default function FrontendPage() {
-    return (
-        <Mobile />
-    )
+    return <SkillsCategoryPage slug="mobile" />;
 }

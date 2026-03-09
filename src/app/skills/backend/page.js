@@ -1,7 +1,5 @@
-import Backend from '@/components/backend';
+import SkillsCategoryPage from '@/components/skills-category-page';
 
 export default function BackendPage() {
-    return (
-        <Backend />                                                        
-    )
+    return <SkillsCategoryPage slug="backend" />;
 }

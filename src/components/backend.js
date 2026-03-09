@@ -9,9 +9,10 @@ import CardContainer from '@/components/card-container';
 import php from '@/../public/images/php.png'
 import laravel from '@/../public/images/laravel.png'
 import zend from '@/../public/images/zend.png'
+import statamic from '@/../public/images/statamic.jpg'
 import wordpress from '@/../public/images/wordpress.png'
 import nodejs from '@/../public/images/nodejs.png'
- import expressjs from '@/../public/images/expressjs.png'
+import expressjs from '@/../public/images/expressjs.png'
 import nestjs from '@/../public/images/nestjs.png'
 import python from '@/../public/images/python.png'
 import django from '@/../public/images/django.png'
@@ -45,6 +46,13 @@ export default function Backend() {
                     alt="Picture of Zend Framework." 
                     title="Zend" 
                     subtitle="Zend Framework"
+                />
+
+                <GalleryItem 
+                    src={statamic} 
+                    alt="Picture of Statamic CMS." 
+                    title="Statamic" 
+                    subtitle="Statamic CMS"
                 />
 
                 <GalleryItem 

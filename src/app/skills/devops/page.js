@@ -1,7 +1,5 @@
-import Devops from '@/components/devops';
+import SkillsCategoryPage from '@/components/skills-category-page';
 
 export default function DevOpsPage() {
-    return (
-        <Devops />
-    )
+    return <SkillsCategoryPage slug="cloud-devops" />;
 }

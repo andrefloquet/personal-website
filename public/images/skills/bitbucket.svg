@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024">
+  <rect width="1536" height="1024" fill="#E5E7EB"/>
+  <g transform="translate(768 430)">
+    <rect x="-360" y="-250" width="720" height="500" rx="40" fill="#FFFFFF"/>
+    <g transform="translate(0 -35) scale(13)">
+      <path d="M.778 1.213a.768.768 0 00-.768.892l3.263 19.81c.084.5.515.868 1.022.873H19.95a.772.772 0 00.77-.646l3.27-20.03a.768.768 0 00-.768-.891zM14.52 15.53H9.522L8.17 8.466h7.561z" fill="#0052CC" transform="translate(-12 -12)"/>
+    </g>
+    <text x="0" y="210" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="56" font-weight="700" fill="#0F172A">Bitbucket</text>
+  </g>
+</svg>
