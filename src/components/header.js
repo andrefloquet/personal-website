@@ -20,7 +20,8 @@ export default function Header() {
                 <nav className="flex-1">
                     <ul className="flex flex-row gap-2 items-center justify-center">
                         <MenuItem name="Home" href="/" />
-                        <MenuItem name="Skills" href="/skills" />                        
+                        <MenuItem name="Skills" href="/skills" />
+                        <MenuItem name="Experience" href="/#experience" />
                         <MenuItem name="About" href="/about" />
                     </ul>
                 </nav>
