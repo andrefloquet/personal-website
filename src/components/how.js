@@ -4,7 +4,7 @@ import { SKILL_CATEGORIES } from '@/data/skills-data';
 
 export default function How() {
     return (
-        <section className="mb-10">
+        <section className="relative bg-white pb-10 pt-8">
             <div className="max-w-9/10 mx-auto mb-16 hidden items-center justify-between md:flex">
                 <div>
                     <h2 className="mb-3 text-4xl font-bold">Skills</h2>
