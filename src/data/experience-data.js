@@ -1,7 +1,7 @@
 export const WORK_EXPERIENCE = [
   {
     slug: "restaurant-reviews",
-    role: "Senior Full Stack Developer / Engineering Manager",
+    role: "IT Project Manager / AI Engineer / Senior Full Stack Engineer / DevOps Engineer / Mobile Engineer",
     company: "Restaurant Reviews",
     period: "Jan 2026 - Present",
     location: "Gold Coast, QLD, Australia - On-site",
