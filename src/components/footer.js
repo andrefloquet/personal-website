@@ -31,6 +31,7 @@ export default function Footer() {
                                 <MenuItem name="Experience" href="/#experience" />
                                 <MenuItem name="Education" href="/#education" />
                                 <MenuItem name="Certifications" href="/#certifications" />
+                                <MenuItem name="Contact" href="/#contact" />
                                 <MenuItem name="About" href="/about" />
                             </ul>
                         </nav>
