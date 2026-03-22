@@ -2,8 +2,8 @@ import GalleryItem from '@/components/gallery-item';
 import CardContainer from '@/components/card-container';
 
 // images
-import cisco from '@/../public/images/cisco.png'
-import juniper from '@/../public/images/juniper.png'
+import cisco from '@/../public/images/skills/cisco.svg'
+import juniper from '@/../public/images/skills/juniper.svg'
 
 export default function Network() {
     return (
