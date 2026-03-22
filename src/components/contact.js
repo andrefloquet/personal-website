@@ -103,6 +103,7 @@ export default function Contact() {
           email,
           phone: phoneE164,
           message,
+          company: String(formData.get('company') || ''),
         }),
       });
 
@@ -165,6 +166,14 @@ export default function Contact() {
 
         <div className="mx-auto max-w-3xl rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm md:p-8">
           <form className="space-y-5" noValidate onSubmit={handleSubmit}>
+            <input
+              name="company"
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              className="hidden"
+              aria-hidden="true"
+            />
             <div>
               <label
                 htmlFor="fullName"

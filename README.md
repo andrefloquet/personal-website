@@ -41,6 +41,14 @@ This project sends SMS messages from the Contact form using Twilio:
 
 - SMS #1 goes to you (site owner) with the form details
 - SMS #2 goes to the visitor phone number (if provided) as confirmation
+- Brevo sends 2 email confirmations on each submission:
+  - owner notification email to `BREVO_OWNER_EMAIL`
+  - user confirmation email to the form email address
+- If SMS fails, Brevo still guarantees owner/user email delivery
+- API includes basic anti-spam:
+  - IP rate limit (5 requests / 15 minutes)
+  - duplicate content blocking for short intervals
+  - hidden honeypot field
 
 ### 1) Install and configure environment variables
 
@@ -51,6 +59,14 @@ TWILIO_ACCOUNT_SID=ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 TWILIO_AUTH_TOKEN=your_twilio_auth_token
 TWILIO_FROM_NUMBER=+15551234567
 CONTACT_RECEIVER_NUMBER=+61412345678
+
+BREVO_API_KEY=your_brevo_api_key
+BREVO_OWNER_EMAIL=andre@example.com
+BREVO_SENDER_EMAIL=no-reply@example.com
+BREVO_SENDER_NAME=Andre Floquet Website
+
+BUSINESS_NAME=Andre Floquet
+BUSINESS_TIMEZONE=Australia/Brisbane
 ```
 
 ### 2) Twilio account setup
@@ -61,14 +77,24 @@ CONTACT_RECEIVER_NUMBER=+61412345678
 4. Set `TWILIO_FROM_NUMBER` to your Twilio number in E.164 format.
 5. Set `CONTACT_RECEIVER_NUMBER` to your personal number in E.164 format.
 
-### 3) Trial account note (important)
+### 3) Brevo setup (email fallback)
+
+1. Create/login to your Brevo account.
+2. Generate an API key in Brevo SMTP/API settings.
+3. Set:
+   - `BREVO_API_KEY`
+   - `BREVO_OWNER_EMAIL` (where fallback owner notifications go)
+   - `BREVO_SENDER_EMAIL` (verified sender in Brevo)
+   - `BREVO_SENDER_NAME` (display sender name)
+
+### 4) Trial account note (important)
 
 If your Twilio account is trial:
 
 - You must verify destination numbers in Twilio first.
 - That includes your own receiver number and any visitor number you want to test confirmation SMS with.
 
-### 4) Run locally
+### 5) Run locally
 
 ```bash
 npm run dev
@@ -79,7 +105,8 @@ Submit the Contact form and confirm:
 - You receive owner SMS with full name, email, phone, and message.
 - Visitor phone receives confirmation SMS:
   - "Your message was submitted successfully to Andre Floquet. He will get in touch with you within the next 24 hours."
+- If SMS is unavailable, fallback email is sent via Brevo (when configured)
 
-### 5) Production deployment
+### 6) Production deployment
 
-Add the same four environment variables to your hosting provider (e.g. Vercel), then redeploy.
+Add the same environment variables to your hosting provider (e.g. Vercel), then redeploy.
