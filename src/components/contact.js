@@ -48,6 +48,7 @@ function normalizeToE164(value, dialCode = '') {
 
 export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [fieldErrors, setFieldErrors] = useState({});
   const [phone, setPhone] = useState('61 ');
   const [phoneE164, setPhoneE164] = useState('');
   const [phoneCountry, setPhoneCountry] = useState('au');
@@ -68,7 +69,25 @@ export default function Contact() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const errors = {};
+
+    const fullName = String(formData.get('fullName') || '').trim();
+    const email = String(formData.get('email') || '').trim();
+    const message = String(formData.get('message') || '').trim();
+
+    if (!fullName) errors.fullName = 'Full Name is required.';
+    if (!email) errors.email = 'Email is required.';
+    if (!message) errors.message = 'Message is required.';
+
+    setFieldErrors(errors);
+    if (Object.keys(errors).length > 0) {
+      setIsSubmitted(false);
+      return;
+    }
+
     setIsSubmitted(true);
+    setFieldErrors({});
     setPhone('61 ');
     setPhoneE164('');
     setPhoneCountry('au');
