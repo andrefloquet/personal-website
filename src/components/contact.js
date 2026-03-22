@@ -48,6 +48,8 @@ function normalizeToE164(value, dialCode = '') {
 
 export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState(null);
   const [fieldErrors, setFieldErrors] = useState({});
   const [phone, setPhone] = useState('61 ');
   const [phoneE164, setPhoneE164] = useState('');
@@ -67,9 +69,10 @@ export default function Contact() {
     return maskMap;
   }, []);
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+    const formElement = event.currentTarget;
+    const formData = new FormData(formElement);
     const errors = {};
 
     const fullName = String(formData.get('fullName') || '').trim();
@@ -83,16 +86,65 @@ export default function Contact() {
     setFieldErrors(errors);
     if (Object.keys(errors).length > 0) {
       setIsSubmitted(false);
+      setSubmitMessage(null);
       return;
     }
 
-    setIsSubmitted(true);
+    setIsSending(true);
+    setSubmitMessage(null);
     setFieldErrors({});
-    setPhone('61 ');
-    setPhoneE164('');
-    setPhoneCountry('au');
-    setPhoneHint('Example: +61 412 345 678');
-    event.currentTarget.reset();
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fullName,
+          email,
+          phone: phoneE164,
+          message,
+        }),
+      });
+
+      let result = {};
+      try {
+        result = await response.json();
+      } catch {
+        // If API returns 200 with an empty/non-JSON body, still treat as success.
+        result = {};
+      }
+
+      if (!response.ok) {
+        setIsSubmitted(false);
+        setSubmitMessage({
+          type: 'error',
+          text: result?.error || 'Something went wrong. Please try again.',
+        });
+        return;
+      }
+
+      setIsSubmitted(true);
+      setSubmitMessage({
+        type: 'success',
+        text:
+          result?.message ||
+          'Message sent successfully. Andre Floquet will get in touch with you soon.',
+      });
+      setPhone('61 ');
+      setPhoneE164('');
+      setPhoneCountry('au');
+      setPhoneHint('Example: +61 412 345 678');
+      formElement.reset();
+    } catch (error) {
+      console.error('Contact form submit failed on client:', error);
+      setIsSubmitted(false);
+      setSubmitMessage({
+        type: 'error',
+        text: 'Unable to send your message right now. Please try again.',
+      });
+    } finally {
+      setIsSending(false);
+    }
   }
 
   function lockToDialCodeOnly(countryData) {
@@ -276,16 +328,21 @@ export default function Contact() {
 
             <button
               type="submit"
-              className="w-full rounded-lg bg-sky-600 px-6 py-3 font-medium text-white transition hover:bg-sky-700 md:w-auto"
+              disabled={isSending}
+              className="w-full rounded-lg bg-sky-600 px-6 py-3 font-medium text-white transition hover:bg-sky-700 disabled:cursor-not-allowed disabled:opacity-70 md:w-auto"
             >
-              Send Message
+              {isSending ? 'Sending...' : 'Send Message'}
             </button>
           </form>
 
-          {isSubmitted && (
+          {isSubmitted && submitMessage?.type === 'success' && (
             <p className="mt-4 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700">
-              Thanks! Your message was captured locally. Connect this form to your
-              preferred email/API service to receive submissions.
+              {submitMessage.text}
+            </p>
+          )}
+          {submitMessage?.type === 'error' && (
+            <p className="mt-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+              {submitMessage.text}
             </p>
           )}
         </div>
