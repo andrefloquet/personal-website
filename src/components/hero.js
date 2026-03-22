@@ -3,7 +3,7 @@ import profile from '@/../public/sitting.png'
 
 export default function Hero() {
     return (
-        <section className="relative overflow-hidden bg-gradient-to-b from-sky-50 to-slate-50 h-auto pt-12 pb-14 md:pb-10">
+        <section className="relative overflow-hidden bg-gradient-to-b from-sky-50 to-slate-50 h-auto pt-12 pb-0">
             <div className="grid grid-cols-1 items-center text-center max-w-9/10 mx-auto md:min-h-[80vh] md:grid-cols-2 md:gap-8 md:text-left">
                 <div className="">
                     <h1 className="mb-8 text-4xl font-bold leading-tight text-slate-900 md:text-6xl">
@@ -25,7 +25,7 @@ export default function Hero() {
                     <Image 
                         src={profile} 
                         alt="Picture of Andre Floquet. The author." 
-                        className="max-h-screen w-full drop-shadow-xl"
+                        className="block max-h-screen w-full drop-shadow-xl"
                     />
                 </div>
             </div>
