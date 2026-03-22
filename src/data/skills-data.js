@@ -53,7 +53,7 @@ export const SKILL_CATEGORIES = [
         title: 'Networking',
         icon: 'Network',
         description: 'Supporting secure network operations, infrastructure stability, and enterprise connectivity standards.',
-        skills: ['Linux Server Administration', 'Network Management', 'Cisco & Juniper', 'Cybersecurity'],
+        skills: ['Linux Server Administration', 'Network Management', 'Cisco', 'Juniper', 'Cybersecurity'],
     },
     {
         slug: 'engineering',

@@ -75,7 +75,6 @@ const skillImages = {
     'DynamoDB': dynamodb,
     'Docker': docker,
     'Kubernetes': kubernetes,
-    'Cisco & Juniper': cisco,
     'Cisco': cisco,
     'Juniper': juniper,
 };
