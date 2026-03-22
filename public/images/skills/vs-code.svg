@@ -1,14 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024">
-  <defs>
-    <linearGradient id="bg" x1="220" y1="180" x2="1310" y2="860" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#0284C7"/>
-      <stop offset="100%" stop-color="#4F46E5"/>
-    </linearGradient>
-  </defs>
   <rect width="1536" height="1024" fill="#E5E7EB"/>
-  <g transform="translate(768 512)">
-    <rect x="-500" y="-260" width="1000" height="520" rx="46" fill="url(#bg)"/>
-    <text x="0" y="-20" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="188" font-weight="800" fill="#FFFFFF">VC</text>
-    <text x="0" y="140" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="52" font-weight="600" fill="#E2E8F0">VS Code</text>
+  <g transform="translate(768 430)">
+    <rect x="-360" y="-250" width="720" height="500" rx="40" fill="#FFFFFF"/>
+    <g transform="translate(0 -35) scale(8)">
+      <path d="M48 0v55L0 47.84 48 64l16-6.66V6.65zM31.2 9.36L16.5 23.9l-8.85-6.67L4 18.45l9 8.9-9 8.9 3.65 1.22 8.85-6.67 14.7 14.53L40 41.6V13.1zm0 10.37V35l-10.1-7.65z" fill="#007ACC" transform="translate(-32 -32)"/>
+    </g>
+    <text x="0" y="210" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="56" font-weight="700" fill="#0F172A">VS Code</text>
   </g>
 </svg>
