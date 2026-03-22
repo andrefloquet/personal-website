@@ -112,22 +112,26 @@ export default function Contact() {
         </div>
 
         <div className="mx-auto max-w-3xl rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm md:p-8">
-          <form className="space-y-5" onSubmit={handleSubmit}>
+          <form className="space-y-5" noValidate onSubmit={handleSubmit}>
             <div>
               <label
                 htmlFor="fullName"
                 className="mb-2 block text-sm font-semibold text-slate-700"
               >
-                Full Name
+                Full Name <span className="text-red-500">*</span>
               </label>
               <input
                 id="fullName"
                 name="fullName"
                 type="text"
-                required
-                className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
+                className={`w-full rounded-lg border bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-200 ${
+                  fieldErrors.fullName ? 'border-red-400' : 'border-slate-300'
+                }`}
                 placeholder="Your full name"
               />
+              {fieldErrors.fullName && (
+                <p className="mt-1 text-xs text-red-600">{fieldErrors.fullName}</p>
+              )}
             </div>
 
             <div>
@@ -135,16 +139,20 @@ export default function Contact() {
                 htmlFor="email"
                 className="mb-2 block text-sm font-semibold text-slate-700"
               >
-                Email
+                Email <span className="text-red-500">*</span>
               </label>
               <input
                 id="email"
                 name="email"
                 type="email"
-                required
-                className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
+                className={`w-full rounded-lg border bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-200 ${
+                  fieldErrors.email ? 'border-red-400' : 'border-slate-300'
+                }`}
                 placeholder="you@example.com"
               />
+              {fieldErrors.email && (
+                <p className="mt-1 text-xs text-red-600">{fieldErrors.email}</p>
+              )}
             </div>
 
             <div>
@@ -250,16 +258,20 @@ export default function Contact() {
                 htmlFor="message"
                 className="mb-2 block text-sm font-semibold text-slate-700"
               >
-                Message
+                Message <span className="text-red-500">*</span>
               </label>
               <textarea
                 id="message"
                 name="message"
-                required
                 rows={6}
-                className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
+                className={`w-full rounded-lg border bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-200 ${
+                  fieldErrors.message ? 'border-red-400' : 'border-slate-300'
+                }`}
                 placeholder="Tell me about your project or question..."
               />
+              {fieldErrors.message && (
+                <p className="mt-1 text-xs text-red-600">{fieldErrors.message}</p>
+              )}
             </div>
 
             <button
