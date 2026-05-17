@@ -264,20 +264,29 @@ function buildVisitorEmailTemplate({
   return { subject, textContent, htmlContent };
 }
 
-async function sendBrevoEmail(config, { to, subject, textContent, htmlContent }) {
+async function sendBrevoEmail(
+  config,
+  { to, subject, textContent, htmlContent, replyTo }
+) {
+  const payload = {
+    sender: { email: config.senderEmail, name: config.senderName },
+    to: [{ email: to }],
+    subject,
+    textContent,
+    htmlContent,
+  };
+
+  if (replyTo) {
+    payload.replyTo = replyTo;
+  }
+
   const response = await fetch('https://api.brevo.com/v3/smtp/email', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       'api-key': config.apiKey,
     },
-    body: JSON.stringify({
-      sender: { email: config.senderEmail, name: config.senderName },
-      to: [{ email: to }],
-      subject,
-      textContent,
-      htmlContent,
-    }),
+    body: JSON.stringify(payload),
   });
 
   if (!response.ok) {
