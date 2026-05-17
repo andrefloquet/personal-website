@@ -480,10 +480,28 @@ export async function POST(request) {
   }
 
   if (brevoConfig && (!ownerEmailDelivered || !visitorEmailDelivered)) {
+    const failedSteps = [];
+    if (!ownerEmailDelivered) failedSteps.push('owner notification email');
+    if (!visitorEmailDelivered) failedSteps.push('visitor confirmation email');
+
+    console.error('Brevo delivery summary:', {
+      ownerEmailDelivered,
+      visitorEmailDelivered,
+      ownerEmailError: ownerEmailError?.message,
+      visitorEmailError: visitorEmailError?.message,
+      visitorRecipient: email,
+      senderEmail: brevoConfig.senderEmail,
+    });
+
+    const visitorOnlyFailure =
+      ownerEmailDelivered && !visitorEmailDelivered;
+
     return NextResponse.json(
       {
-        error:
-          'Your message was received, but confirmation emails could not be delivered. Please verify Brevo sender/domain configuration.',
+        error: visitorOnlyFailure
+          ? 'Your message was received, but the confirmation email to the visitor could not be sent. In Brevo, authenticate your sending domain (DKIM/SPF in Route 53) and use a sender address on that domain for BREVO_SENDER_EMAIL.'
+          : 'Your message was received, but one or more emails could not be delivered. Please verify Brevo sender/domain configuration.',
+        failedSteps,
       },
       { status: 500 }
     );
