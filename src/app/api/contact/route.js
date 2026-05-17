@@ -377,6 +377,8 @@ export async function POST(request) {
   let visitorChannel = null;
   let ownerEmailDelivered = false;
   let visitorEmailDelivered = false;
+  let ownerEmailError = null;
+  let visitorEmailError = null;
 
   if (twilioConfig) {
     const client = twilio(twilioConfig.accountSid, twilioConfig.authToken);
@@ -439,6 +441,7 @@ export async function POST(request) {
       ownerDelivered = true;
       ownerChannel = ownerChannel ? `${ownerChannel}+email` : 'email';
     } catch (error) {
+      ownerEmailError = error;
       console.error('Brevo owner email failed:', error);
     }
 
@@ -452,12 +455,14 @@ export async function POST(request) {
 
       await sendBrevoEmail(brevoConfig, {
         to: email,
+        replyTo: { email: brevoConfig.ownerEmail, name: brevoConfig.senderName },
         ...visitorEmailTemplate,
       });
       visitorEmailDelivered = true;
       visitorDelivered = true;
       visitorChannel = visitorChannel ? `${visitorChannel}+email` : 'email';
     } catch (error) {
+      visitorEmailError = error;
       console.error('Brevo visitor confirmation email failed:', error);
     }
   } else {
