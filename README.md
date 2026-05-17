@@ -87,6 +87,16 @@ BUSINESS_TIMEZONE=Australia/Brisbane
    - `BREVO_SENDER_EMAIL` (verified sender in Brevo)
    - `BREVO_SENDER_NAME` (display sender name)
 
+**Visitor confirmation emails (important):** Owner notifications often work before visitor emails do. Brevo may deliver to your own inbox (`BREVO_OWNER_EMAIL`) while blocking or spam-filtering mail to arbitrary addresses until your **domain is authenticated**.
+
+1. In Brevo go to **Settings → Senders, domains & IPs → Domains**.
+2. Add your website domain and copy the DNS records (SPF, DKIM, etc.).
+3. In **Route 53**, add those records to your domain hosted zone.
+4. Wait until Brevo shows the domain as **Verified**.
+5. Set `BREVO_SENDER_EMAIL` to an address on that domain (for example `noreply@yourdomain.com`), not a personal Gmail.
+6. Under **Security → Authorized IPs**, keep **Blocking unauthorized IP addresses** deactivated for API keys (required for Vercel).
+7. After a test submit, check **Transactional → Logs** in Brevo for the visitor address. If status is *sent* but nothing arrives, check the recipient spam folder.
+
 ### 4) Trial account note (important)
 
 If your Twilio account is trial:
