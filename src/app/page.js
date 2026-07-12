@@ -3,6 +3,7 @@ import How from '@/components/how';
 import WorkExperience from '@/components/work-experience';
 import Education from '@/components/education';
 import Certifications from '@/components/certifications';
+import Clients from '@/components/clients';
 import Contact from '@/components/contact';
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <WorkExperience />
       <Education />
       <Certifications />
+      <Clients />
       <Contact />
     </>
   );

@@ -16,6 +16,7 @@ export default function Header() {
         { name: "Experience", href: "/#experience" },
         { name: "Education", href: "/#education" },
         { name: "Certifications", href: "/#certifications" },
+        { name: "Clients", href: "/#clients" },
         { name: "Contact", href: "/#contact" },
         { name: "About", href: "/about" },
     ];
@@ -49,6 +50,7 @@ export default function Header() {
                         <MenuItem name="Experience" href="/#experience" />
                         <MenuItem name="Education" href="/#education" />
                         <MenuItem name="Certifications" href="/#certifications" />
+                        <MenuItem name="Clients" href="/#clients" />
                         <MenuItem name="Contact" href="/#contact" />
                         <MenuItem name="About" href="/about" />
                     </ul>

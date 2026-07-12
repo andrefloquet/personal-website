@@ -42,7 +42,10 @@ export default function About() {
                     <div className="line-through">Education</div>
 
                     <div><CircleCheck className="w-4 h-4 text-green-600" /></div>
-                    <div className="line-through">Certifications</div>    
+                    <div className="line-through">Certifications</div>
+
+                    <div><CircleCheck className="w-4 h-4 text-green-600" /></div>
+                    <div className="line-through">Clients</div>
 
                     <div><CircleCheck className="w-4 h-4 text-green-600" /></div>
                     <div className="line-through">About Page</div>      
